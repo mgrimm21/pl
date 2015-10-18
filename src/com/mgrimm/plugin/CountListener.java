@@ -63,6 +63,7 @@ public class CountListener implements Listener{
 				p.sendMessage(ChatColor.GOLD + "Your Skeleton Kills: " + playerzkillcount);
 				plugin.getConfig().set("skeletonkills", totalzkillcount);
 				plugin.getConfig().set("kills." + p.getUniqueId().toString() + ".skeleton", playerzkillcount);
+				
 			}
 			if (dead instanceof Creeper){
 				int playerzkillcount = plugin.getConfig().getInt("kills." + p.getUniqueId().toString() + ".creeper");
