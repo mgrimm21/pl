@@ -1,0 +1,13 @@
+name: MyPlugin
+description: This is my first Plugin.
+author: mgrimm21
+website: www.mgrimm.com
+version: 0.1
+commands:
+  eternaldark:
+    usage: /<command>
+    description: default
+  spawn:
+    usage: /<command>
+    description: goes to spawn
+main: com.mgrimm.plugin.Plugin
