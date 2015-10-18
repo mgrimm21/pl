@@ -23,15 +23,19 @@ public class CountListener implements Listener{
 	}
 	
 	@EventHandler
-	public void onPlayerJoint(PlayerJoinEvent event){
+	public void onPlayerJoin(PlayerJoinEvent event){
 		Player p = event.getPlayer();
 		String uuid = p.getUniqueId().toString();
+		if (!plugin.getConfig().contains("balance." + uuid)){
+			plugin.getConfig().set("balance." + uuid, 10000);
+			plugin.saveConfig();
+		}
 		if (!plugin.getConfig().contains("kills." + uuid)){
 			
 			plugin.getConfig().set("kills." + uuid + ".zombie", 0);
 			plugin.getConfig().set("kills." + uuid + ".creeper", 0);
 			plugin.getConfig().set("kills." + uuid + ".skeleton", 0);
-		
+			plugin.saveConfig();
 		}
 	}
 	

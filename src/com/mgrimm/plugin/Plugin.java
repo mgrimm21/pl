@@ -46,6 +46,12 @@ public class Plugin extends JavaPlugin{
 			}
 		}
 		
+		if (label.equalsIgnoreCase("bal") || label.equalsIgnoreCase("balance")){
+			Player p = (Player) sender;
+			int bal = getConfig().getInt("balance." + p.getUniqueId().toString());
+			p.sendMessage("Balance: " + bal);
+		}
+		
 		return true;
 	}
 	

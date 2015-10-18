@@ -10,4 +10,10 @@ commands:
   spawn:
     usage: /<command>
     description: goes to spawn
+  bal:
+    usage: /<command>
+    description: shows current balance
+  balance:
+    usage: /<command>
+    description: shows current balance
 main: com.mgrimm.plugin.Plugin
