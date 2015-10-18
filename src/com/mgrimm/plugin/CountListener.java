@@ -49,7 +49,9 @@ public class CountListener implements Listener{
 			int totalzkillcount = plugin.getConfig().getInt("zombiekills");
 			totalzkillcount++;
 			playerzkillcount++;
-			Bukkit.getServer().broadcastMessage(ChatColor.GOLD + "Total Zombie Kills: " + totalzkillcount);
+			if (totalzkillcount % 100 == 0){
+				Bukkit.getServer().broadcastMessage(ChatColor.GOLD + "Total Zombie Kills: " + totalzkillcount);
+			}
 			p.sendMessage(ChatColor.GOLD + "Your Zombie Kills: " + playerzkillcount);
 			plugin.getConfig().set("zombiekills", totalzkillcount);
 			plugin.getConfig().set("kills." + p.getUniqueId().toString() + ".zombie", playerzkillcount);
@@ -59,7 +61,9 @@ public class CountListener implements Listener{
 				int totalzkillcount = plugin.getConfig().getInt("skeletonkills");
 				totalzkillcount++;
 				playerzkillcount++;
-				p.sendMessage(ChatColor.GOLD + "Total Skeleton Kills: " + totalzkillcount);
+				if (totalzkillcount % 100 == 0){
+					Bukkit.getServer().broadcastMessage(ChatColor.GOLD + "Total Skeleton Kills: " + totalzkillcount);
+				}
 				p.sendMessage(ChatColor.GOLD + "Your Skeleton Kills: " + playerzkillcount);
 				plugin.getConfig().set("skeletonkills", totalzkillcount);
 				plugin.getConfig().set("kills." + p.getUniqueId().toString() + ".skeleton", playerzkillcount);
@@ -70,7 +74,9 @@ public class CountListener implements Listener{
 				int totalzkillcount = plugin.getConfig().getInt("creeperkills");
 				totalzkillcount++;
 				playerzkillcount++;
-				p.sendMessage(ChatColor.GOLD + "Total Creeper Kills: " + totalzkillcount);
+				if (totalzkillcount % 100 == 0){
+					Bukkit.getServer().broadcastMessage(ChatColor.GOLD + "Total Creeper Kills: " + totalzkillcount);
+				}
 				p.sendMessage(ChatColor.GOLD + "Your Creeper Kills: " + playerzkillcount);
 				plugin.getConfig().set("creeperkills", totalzkillcount);
 				plugin.getConfig().set("kills." + p.getUniqueId().toString() + ".creeper", playerzkillcount);
